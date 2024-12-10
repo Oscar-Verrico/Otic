@@ -8,6 +8,7 @@
 
 import Foundation
 
+// unnecessary if storing on cloud
 func createAppFolderIfNeeded() -> URL? {
     print("createAppFolderIfNeeded called")
     let fileManager = FileManager.default

@@ -5,13 +5,11 @@
 //  Created by Oscar Verrico on 11/24/24.
 //
 
-
 import SwiftUI
-import AVFoundation
 import UniformTypeIdentifiers
 
 struct DocumentPicker: UIViewControllerRepresentable {
-    var completionHandler: (URL?) -> Void
+    var onPicked: (URL?) -> Void
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
         let picker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.audio])
@@ -22,23 +20,29 @@ struct DocumentPicker: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(completionHandler: completionHandler)
+        Coordinator(onPicked: onPicked)
     }
 
     class Coordinator: NSObject, UIDocumentPickerDelegate {
-        var completionHandler: (URL?) -> Void
+        var onPicked: (URL?) -> Void
 
-        init(completionHandler: @escaping (URL?) -> Void) {
-            self.completionHandler = completionHandler
+        init(onPicked: @escaping (URL?) -> Void) {
+            self.onPicked = onPicked
         }
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            completionHandler(urls.first)
+            print("Picked URLs: \(urls)")
+            controller.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.onPicked(urls.first)
+            }
         }
 
         func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-            completionHandler(nil)
+            controller.dismiss(animated: true, completion: nil) // Explicitly dismiss
+            DispatchQueue.main.async {
+                self.onPicked(nil)
+            }
         }
     }
 }
-

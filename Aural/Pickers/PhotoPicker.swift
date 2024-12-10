@@ -1,3 +1,11 @@
+//
+//  PhotoPicker.swift
+//  Aural
+//
+//  Created by Oscar Verrico on 12/6/24.
+//
+
+
 import SwiftUI
 import PhotosUI
 

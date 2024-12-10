@@ -6,15 +6,25 @@
 //
 
 import SwiftUI
+import Foundation
 
 @main
 struct AuralApp: App {
-    let persistenceController = PersistenceController.shared
+    init() {
+        // Print the Documents Directory path
+        let fileManager = FileManager.default
+        if let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+            print("App Documents Directory: \(documentsURL.path)")
+        } else {
+            print("Could not locate the Documents directory.")
+        }
+    }
+    @StateObject var playlistManager = PlaylistManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(playlistManager)
         }
     }
 }

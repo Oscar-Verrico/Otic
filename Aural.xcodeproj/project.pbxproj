@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E91FF26F2D0852A50043814F /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E91FF26E2D0852A50043814F /* Supabase */; };
+		E96CC6E82D03B52A000377F2 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = E96CC6E72D03B52A000377F2 /* Storage */; };
+		E96CC6EC2D03B5BF000377F2 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = E96CC6EB2D03B5BF000377F2 /* Auth */; };
+		E96CC6EE2D03B5BF000377F2 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = E96CC6ED2D03B5BF000377F2 /* Functions */; };
+		E96CC6F02D03B5BF000377F2 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = E96CC6EF2D03B5BF000377F2 /* PostgREST */; };
+		E96CC6F22D03B5BF000377F2 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = E96CC6F12D03B5BF000377F2 /* Realtime */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E98B9B152CD935D100247E88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,32 +39,58 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E96CC6DC2D03807E000377F2 /* Exceptions for "Aural" folder in "AuralTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/AudioBoxTests.swift,
+				Tests/AuralTests.swift,
+				Tests/PlaylistManagerTests.swift,
+			);
+			target = E98B9B132CD935D100247E88 /* AuralTests */;
+		};
+		E96CC6DD2D03807E000377F2 /* Exceptions for "Aural" folder in "AuralUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/AuralUITests.swift,
+				Tests/AuralUITestsLaunchTests.swift,
+			);
+			target = E98B9B1D2CD935D100247E88 /* AuralUITests */;
+		};
 		E98B9B262CD935D100247E88 /* Exceptions for "Aural" folder in "Aural" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				FileManagerHelper.swift,
 				Info.plist,
+				Tests/AudioBoxTests.swift,
+				Tests/AuralTests.swift,
+				Tests/AuralUITests.swift,
+				Tests/AuralUITestsLaunchTests.swift,
+				Tests/PlaylistManagerTests.swift,
 			);
 			target = E98B9AFC2CD935CE00247E88 /* Aural */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		E96CC6E52D03ACB9000377F2 /* Exceptions for "Aural" folder in "Copy Bundle Resources" phase from "Aural" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = E98B9AFB2CD935CE00247E88 /* Resources */;
+			membershipExceptions = (
+				FileManagerHelper.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E98B9AFF2CD935CE00247E88 /* Aural */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				E98B9B262CD935D100247E88 /* Exceptions for "Aural" folder in "Aural" target */,
+				E96CC6E52D03ACB9000377F2 /* Exceptions for "Aural" folder in "Copy Bundle Resources" phase from "Aural" target */,
+				E96CC6DC2D03807E000377F2 /* Exceptions for "Aural" folder in "AuralTests" target */,
+				E96CC6DD2D03807E000377F2 /* Exceptions for "Aural" folder in "AuralUITests" target */,
 			);
 			path = Aural;
-			sourceTree = "<group>";
-		};
-		E98B9B172CD935D100247E88 /* AuralTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AuralTests;
-			sourceTree = "<group>";
-		};
-		E98B9B212CD935D100247E88 /* AuralUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AuralUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -65,6 +100,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96CC6F02D03B5BF000377F2 /* PostgREST in Frameworks */,
+				E96CC6EE2D03B5BF000377F2 /* Functions in Frameworks */,
+				E91FF26F2D0852A50043814F /* Supabase in Frameworks */,
+				E96CC6EC2D03B5BF000377F2 /* Auth in Frameworks */,
+				E96CC6F22D03B5BF000377F2 /* Realtime in Frameworks */,
+				E96CC6E82D03B52A000377F2 /* Storage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +126,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91FF26D2D0852A50043814F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E98B9AF42CD935CE00247E88 = {
 			isa = PBXGroup;
 			children = (
 				E98B9AFF2CD935CE00247E88 /* Aural */,
-				E98B9B172CD935D100247E88 /* AuralTests */,
-				E98B9B212CD935D100247E88 /* AuralUITests */,
+				E91FF26D2D0852A50043814F /* Frameworks */,
 				E98B9AFE2CD935CE00247E88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +172,12 @@
 			);
 			name = Aural;
 			packageProductDependencies = (
+				E96CC6E72D03B52A000377F2 /* Storage */,
+				E96CC6EB2D03B5BF000377F2 /* Auth */,
+				E96CC6ED2D03B5BF000377F2 /* Functions */,
+				E96CC6EF2D03B5BF000377F2 /* PostgREST */,
+				E96CC6F12D03B5BF000377F2 /* Realtime */,
+				E91FF26E2D0852A50043814F /* Supabase */,
 			);
 			productName = Aural;
 			productReference = E98B9AFD2CD935CE00247E88 /* Aural.app */;
@@ -142,9 +195,6 @@
 			);
 			dependencies = (
 				E98B9B162CD935D100247E88 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E98B9B172CD935D100247E88 /* AuralTests */,
 			);
 			name = AuralTests;
 			packageProductDependencies = (
@@ -165,9 +215,6 @@
 			);
 			dependencies = (
 				E98B9B202CD935D100247E88 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E98B9B212CD935D100247E88 /* AuralUITests */,
 			);
 			name = AuralUITests;
 			packageProductDependencies = (
@@ -208,6 +255,9 @@
 			);
 			mainGroup = E98B9AF42CD935CE00247E88;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E98B9AFE2CD935CE00247E88 /* Products */;
 			projectDirPath = "";
@@ -569,6 +619,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E91FF26E2D0852A50043814F /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		E96CC6E72D03B52A000377F2 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		E96CC6EB2D03B5BF000377F2 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		E96CC6ED2D03B5BF000377F2 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		E96CC6EF2D03B5BF000377F2 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		E96CC6F12D03B5BF000377F2 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E96CC6E62D03B52A000377F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E98B9AF52CD935CE00247E88 /* Project object */;
 }
