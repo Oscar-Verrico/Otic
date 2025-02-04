@@ -17,8 +17,11 @@ Planned features include:
 * More playback modification options such as speed and pitch
 
 Icon:
+
 ![image](https://github.com/user-attachments/assets/ceaf5e8d-1d0d-4ada-ad80-b8ba49fc31d2)
 
 How it looks so far: 
+
 ![Otic_music_file](https://github.com/user-attachments/assets/2080306b-5c7e-4dd3-860f-a39d701136d9)
+
 ![playlist_thumbnail](https://github.com/user-attachments/assets/36be7dc4-329e-4534-9608-7015280c4dde)
